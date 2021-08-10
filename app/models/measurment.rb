@@ -1,0 +1,2 @@
+class Measurment < ApplicationRecord
+end
