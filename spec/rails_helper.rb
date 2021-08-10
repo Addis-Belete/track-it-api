@@ -44,7 +44,7 @@ RSpec.configure do |config|
   # [...]
   # add `FactoryBot` methods
   config.include FactoryBot::Syntax::Methods
-
+  config.include RequestSpecHelper, type: :request
   # start by truncating all the tables but then use the faster transaction strategy the rest of the time.
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
@@ -60,8 +60,3 @@ end
 # [...]
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # [...]
-RSpec.configuration do |config|
-  # [...]
-  config.include RequestSpecHelper, type: :request
-  # [...]
-end
