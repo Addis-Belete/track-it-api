@@ -1,5 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Measurment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many(:results).dependent(:destroy) }
+  it { should validate_presence_of(:category) }
 end
