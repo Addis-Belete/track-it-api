@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :measurment do
-    category { Faker::Biseps.word }
+    category { Faker::Lorem.word }
   end
 end

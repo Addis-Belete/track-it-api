@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Measurments API", type: :request do
   let!(:measurments) { create_list(:measurment, 10) }
-  let!(measurment_id) { measurments.first.id }
+  let(:measurment_id) { measurments.first.id }
   describe "GET /measurments" do
     before { get "/measurments" }
     it "returns measurments" do

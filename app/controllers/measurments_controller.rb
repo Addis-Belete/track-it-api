@@ -5,17 +5,18 @@ class MeasurmentsController < ApplicationController
   end
 
   def create
-    @todo = Todo.create!(todos_params)
-    json_response(@todo, :created)
+    @measurment = Measurment.create!(measurments_params)
+    json_response(@measurment, :created)
   end
 
   def show
-    json_response(@todo)
+    @measurment = Measurment.find(params[id])
+    json_response(@measurment)
   end
 
   private
 
-  def todos_params
+  def measurments_params
     params.permit(:category)
   end
 end
