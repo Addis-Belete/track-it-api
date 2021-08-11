@@ -14,7 +14,7 @@ class JsonWebToken
 end
 
 module ExceptionHandler
-  extend Activesupport::Concern
+  extend ActiveSupport::Concern
 
   class AuthenticationError < StandardError; end
   class MissingToken < StandardError; end
