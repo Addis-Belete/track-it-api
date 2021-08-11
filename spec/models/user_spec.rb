@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
   it { should have_many(:measurments) }
 
-  it { should validate_presece_of(:name) }
-  it { should validate_presece_of(:email) }
-  it { should validate_presece_of(:password_digest) }
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:email) }
+  it { should validate_presence_of(:password_digest) }
 end
