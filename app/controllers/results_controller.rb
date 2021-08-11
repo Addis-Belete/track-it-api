@@ -11,12 +11,12 @@ class ResultsController < ApplicationController
   end
 
   def create
-    @measurment.items.create!(measurment_params)
+    @measurment.results.create!(result_params)
     json_response(@measurment, :created)
   end
 
   def update
-    @result.update(items_params)
+    @result.update(result_params)
     head :no_content
   end
 
@@ -36,6 +36,6 @@ class ResultsController < ApplicationController
   end
 
   def set_measurment_result
-    @result = @measurment.items.find_by!(id: params[:id]) if @todo
+    @result = @measurment.results.find_by!(id: params[:id]) if @measurment
   end
 end
