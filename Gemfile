@@ -10,6 +10,7 @@ gem "pg"
 # Use Puma as the app server
 gem "puma", "~> 5.0"
 gem "bcrypt", "~> 3.1.2"
+gem "rack-cors", :require => "rack/cors"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
