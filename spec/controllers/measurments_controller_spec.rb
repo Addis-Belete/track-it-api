@@ -29,4 +29,14 @@ RSpec.describe "Measurments API", type: :request do
       end
     end
   end
+  # test suite for POST /measurments
+  describe "POST /measurments" do
+    let(:valid_attributes) { { category: "biceps" } }
+    context "when the request is valid" do
+      before { post "/measurments", params: valid_attributes }
+      it "creates a measurment category" do
+        expect(json["category"]).to eq("biceps")
+      end
+    end
+  end
 end
