@@ -37,6 +37,16 @@ RSpec.describe "Measurments API", type: :request do
       it "creates a measurment category" do
         expect(json["category"]).to eq("biceps")
       end
+      it "returns status code 201" do
+        expect(response).to have_http_status(201)
+      end
+    end
+
+    context "when the request is invalid " do
+      before { post "/measurments", params: { category: "" } }
+      it " returns status code 422" do
+        expect(response).to have_http_status(422)
+      end
     end
   end
 end
