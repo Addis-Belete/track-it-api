@@ -49,4 +49,14 @@ RSpec.describe "Measurments API", type: :request do
       end
     end
   end
+  # test suite for PUT method
+  describe "PUT /measurments/:id" do
+    let (:valid_attributes) { { category: "Hips" } }
+    context "when the record exists" do
+      before { put "/measurments/#{measurment_id}", params: valid_attributes }
+      it "updates the record" do
+        expect(@response.body).to be_empty
+      end
+    end
+  end
 end
