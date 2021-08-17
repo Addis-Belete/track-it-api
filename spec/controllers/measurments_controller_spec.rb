@@ -59,4 +59,11 @@ RSpec.describe "Measurments API", type: :request do
       end
     end
   end
+  # Test suite for DELETE
+  describe "DELETE /measurmens/:id" do
+    before { delete "/measurments/#{measurment_id}" }
+    it "returns status code 204" do
+      expect(response).to have_http_status(204)
+    end
+  end
 end
