@@ -14,6 +14,18 @@ class MeasurmentsController < ApplicationController
     json_response(@measurment)
   end
 
+  def update
+    @measurment = Measurment.find(params[id])
+    @measurment.update(measurments_params)
+    head :no_content
+  end
+
+  def destroy
+    @measurment = Measurment.find(params[id])
+    @measurment.destroy
+    head :no_content
+  end
+
   private
 
   def measurments_params
