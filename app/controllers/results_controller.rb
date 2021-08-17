@@ -1,6 +1,6 @@
 class ResultsController < ApplicationController
   before_action :set_measurment
-  before_action :set_measurment_result, only: [:show, :update, :destroy]
+  before_action :set_measurment_result, only: %i[show update destroy]
 
   def index
     json_response(@measurment.results)

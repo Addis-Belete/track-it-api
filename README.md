@@ -52,7 +52,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to `Gregoire Vella on Behance` for his design idea
+- Hat tip
 - Inspiration
 - etc
 
