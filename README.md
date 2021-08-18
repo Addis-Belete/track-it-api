@@ -52,7 +52,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip
+- Hat tip`
 - Inspiration
 - etc
 

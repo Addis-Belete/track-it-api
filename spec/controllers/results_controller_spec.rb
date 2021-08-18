@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe ResultsController, type: :controller do
+RSpec.describe "Results API", type: :request do
   let!(:measurment) { create(:measurment) }
   let!(:results) { create_list(:result, 20, measurment_id: measurment.id) }
   let(:measurment_id) { measurment.id }
@@ -8,8 +8,8 @@ RSpec.describe ResultsController, type: :controller do
 
   # test suite for GET
 
-  describe "GET /measurments/:measurment_id/results" do
-    before { get, params:{ use_route:"/measurments/#{measurment_id}/results"} }
+  describe "GET  /measurments/:id/results" do
+    before { get "/measurments/#{measurment_id}/results" }
     context "when result exists" do
       it "returns all measured results" do
         expect(json.size).to eq(20)
