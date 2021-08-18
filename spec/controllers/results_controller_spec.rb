@@ -18,5 +18,17 @@ RSpec.describe "Results API", type: :request do
         expect(response).to have_http_status(200)
       end
     end
+
+    context "when todo does not exist" do
+      let(:measurment_id) { 0 }
+
+      it "returns status code 404" do
+        expect(response).to have_http_status(404)
+      end
+
+      it "returns a not found message" do
+        expect(response.body).to match(/Couldn't find Measurment/)
+      end
+    end
   end
 end
