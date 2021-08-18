@@ -56,4 +56,16 @@ RSpec.describe "Results API", type: :request do
       end
     end
   end
+  # test suite for put
+  describe "POST /measurments/:measurment_id/results" do
+    let(:valid_attributes) { { result: 1 } }
+
+    context "when request attributes are valid" do
+      before { post "/measurments/#{measurment_id}/results", params: valid_attributes }
+
+      it "returns status code 201" do
+        expect(response).to have_http_status(201)
+      end
+    end
+  end
 end
