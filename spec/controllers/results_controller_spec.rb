@@ -31,4 +31,29 @@ RSpec.describe "Results API", type: :request do
       end
     end
   end
+  describe "/measurments/:measurment_id/results/:id" do
+    before { get "/measurments/#{measurment_id}/results/#{id}" }
+
+    context "when measurment result exits exists" do
+      it "returns status code 200" do
+        expect(response).to have_http_status(200)
+      end
+
+      it "returns the result" do
+        expect(json["id"]).to eq(id)
+      end
+    end
+
+    context "when measurment result does not exist" do
+      let(:id) { 0 }
+
+      it "returns status code 404" do
+        expect(response).to have_http_status(404)
+      end
+
+      it "returns a not found message" do
+        expect(response.body).to match(/Couldn't find Result/)
+      end
+    end
+  end
 end
