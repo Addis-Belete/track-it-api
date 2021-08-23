@@ -1,6 +1,4 @@
 class MeasurmentsController < ApplicationController
-  validates :category, presence: true
-
   def index
     @measurments = Measurment.all
     json_response(@measurments)

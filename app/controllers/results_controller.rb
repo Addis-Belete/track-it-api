@@ -1,7 +1,6 @@
 class ResultsController < ApplicationController
   before_action :set_measurment
   before_action :set_measurment_result, only: %i[show update destroy]
-  validates :result, :measurment_id, presence: true
 
   def index
     json_response(@measurment.results)
