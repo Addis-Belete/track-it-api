@@ -14,12 +14,14 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
+
+
 development:
   adapter: postgresql
   encoding: unicode
   database: track-it_development
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") {5}%>
-  username: ENV["USER_NAME"]
+  username:  Addis.B
   password: ENV['PASSWORD']
   timeout: 5000
  
@@ -49,8 +51,8 @@ test:
   encoding: unicode
   database: track-it_test
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") {5}%>
-  username: Addis-B
-  password:
+  username:  Addis.B
+  password: ENV['PASSWORD']
   timeout: 5000
 
   production:
@@ -58,6 +60,6 @@ test:
   encoding: unicode
   database: track-it_production
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") {5}%>
-  username: Addis-B
-  password:
+  username: Addis.B
+  password: ENV['PASSWORD']
   timeout: 5000
