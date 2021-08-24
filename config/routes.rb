@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :measurments do
     resources :results
   end
+  post "auth/login", to: "authentication#authenticate"
 end
