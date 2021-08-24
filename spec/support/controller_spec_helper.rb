@@ -13,4 +13,12 @@ module ControllerSpecHelper
       "Content-Type" => "application/json",
     }
   end
+
+  def invalid_headers
+    {
+      "Authorization" => nil,
+      "Content-Type" => "application/json",
+
+    }
+  end
 end
