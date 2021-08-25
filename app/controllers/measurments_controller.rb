@@ -2,12 +2,12 @@ class MeasurmentsController < ApplicationController
   before_action :set_measurment, only: [:show, :update, :destroy]
 
   def index
-    @measurments = Measurment.all
+    @measurments = current_user.measurments
     json_response(@measurments)
   end
 
   def create
-    @measurment = Measurment.create!(measurments_params)
+    @measurment = current_user.measurments.create!(todo_params)
     json_response(@measurment, :created)
   end
 
