@@ -7,7 +7,7 @@ class MeasurmentsController < ApplicationController
   end
 
   def create
-    @measurment = current_user.measurments.create!(todo_params)
+    @measurment = current_user.measurments.create!(measurments_params)
     json_response(@measurment, :created)
   end
 

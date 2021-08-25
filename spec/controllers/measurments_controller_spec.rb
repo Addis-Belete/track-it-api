@@ -46,7 +46,7 @@ RSpec.describe "Measurments API", type: :request do
     end
 
     context "when the request is invalid " do
-      before { post "/measurments", params: { category: nil }.to_json, headers: headerss }
+      before { post "/measurments", params: { category: nil }.to_json, headers: headers }
       it " returns status code 422" do
         expect(response).to have_http_status(422)
       end
