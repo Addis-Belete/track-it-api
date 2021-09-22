@@ -5,7 +5,7 @@ class AuthorizeApiRequest
 
   def call
     {
-      user: user,
+      user: user
 
     }
   end
@@ -20,7 +20,6 @@ class AuthorizeApiRequest
     raise(
       ExceptionHandler::InvalidToken,
       ("#{Message.invalid_token} #{e.message}")
-
     )
   end
 
@@ -29,9 +28,8 @@ class AuthorizeApiRequest
   end
 
   def http_auth_header
-    if headers["Authorization"].present?
-      return headers["Authorization"].split(" ").last
-    end
+    return headers['Authorization'].split.last if headers['Authorization'].present?
+
     raise(ExceptionHandler::MissingToken, Message.missing_token)
   end
 end

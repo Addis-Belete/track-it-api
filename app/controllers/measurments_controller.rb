@@ -1,5 +1,5 @@
 class MeasurmentsController < ApplicationController
-  before_action :set_measurment, only: [:show, :update, :destroy]
+  before_action :set_measurment, only: %i[show update destroy]
 
   def index
     @measurments = current_user.measurments
